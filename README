@@ -1,0 +1,44 @@
+should consist of, at minamum:
+
+description of how to compile and run the project ,
+
+any outstanding problems that need to be addresed,
+
+probablems encountered allong the way, I guess a log of updates kinda..
+
+
+
+
+MUST USE VERSION CONTROL WITH GIT!!!
+
+The task:
+
+write a makefile that compiles 2 programs at once, oss and worker (use 'all' command)
+worker is launched from within oss variably as needed
+
+
+
+suggested steps:
+
+1. set up git repo
+
+2. create makefile and barebones source files to make sure it atleast complies
+
+3. creaqte the code to parse options and recieve the comand parameters. review getopt
+
+4. fine tune worker taking in options and looping with output
+
+5. Fine tune oss to use fork() and exec() off one worker to "work" and wait() will done
+
+6. fine tune oss to keep forking off workers until the parameter specified
+
+7.  fine tune simultaneour restriction (?)
+
+8. testing, correct readme with usage statement. include git history/version control log
+
+9. before submitting, perform: make clean and keep the latest source checked out in your directory?
+
+
+10. change directory to loepker.1 and set permissions with : chmod 700 loepker.1
+   and: cp -p -r loepker.1 /home/hauschild/cs4760/assignment1
+resubmissions are ammended as loepker.2 and so on
