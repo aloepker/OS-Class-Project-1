@@ -1,6 +1,10 @@
 #include <stdio.h>
 
 
+int main(int argc, char** argv){
+printf("Hello world from OSS.c\n");
+}
+
 // this program will launch a certian number of worker processes with certian parameters.
 // the number launched is based on pased arguments
 

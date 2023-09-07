@@ -1,12 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
+int main(int argc, char** argv){
+if(argc>1){
+printf("Starting loop\n");
+int i;
+int j = atoi(argv[1]);
+for (i=0;i<j;i++){
+printf("Worker PID:%d PPID:%d Iteration:%d Before Sleeping\n",getpid(), getppid(), i+1);
+sleep(1);
+printf("Worker PID:%d PPID:%d Iteration: %d After Sleeping\n",getpid(), getppid(), i+1);
+}
+}else{
+printf("incorrect number of arguments\n");
+}
+}
 
-// this program takes in one command line argument like:
-// ./worker 5
-
-// the number passed in becomes the number of iterations performed on a loop
 
 //each pass through the loop: output the pid, parents pid (ppid),& current iteration of the loop
-//looks like it needsoutput the above w/"before sleep", sleep for 1s, and output the above again w/"after sleep"
-
-// I think tha tis it! no shared memory right now, hurray! will not be called, but can test directly
