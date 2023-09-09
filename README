@@ -20,24 +20,23 @@ worker is launched from within oss variably as needed
 
 suggested steps:
 
-1. set up git repo
+x1. set up git repo  --  DONE!
 
-2. create makefile and barebones source files to make sure it atleast complies
+x2. create makefile and barebones source files to make sure it atleast complies  --  DONE!
 
-3. creaqte the code to parse options and recieve the comand parameters. review getopt
+X3. create the code to parse options and recieve the comand parameters. review getopt  -- DONE!
 
-4. fine tune worker taking in options and looping with output
+x4. fine tune worker taking in options and looping with output  --  DONE!
 
-5. Fine tune oss to use fork() and exec() off one worker to "work" and wait() will done
+x5. Fine tune oss to use fork() and exec() off one worker to "work" and wait() will done  --  DONE! 
 
-6. fine tune oss to keep forking off workers until the parameter specified
+6. fine tune oss to keep forking off workers until the parameter specified --  Current
 
-7.  fine tune simultaneour restriction (?)
+7. fine tune simultaneous restriction (?)
 
 8. testing, correct readme with usage statement. include git history/version control log
 
-9. before submitting, perform: make clean and keep the latest source checked out in your directory?
-
+9. before submitting, perform: make clean and keep the latest source checked out in your directory
 
 10. change directory to loepker.1 and set permissions with : chmod 700 loepker.1
    and: cp -p -r loepker.1 /home/hauschild/cs4760/assignment1
