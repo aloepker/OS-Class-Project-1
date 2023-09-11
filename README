@@ -30,9 +30,9 @@ x4. fine tune worker taking in options and looping with output  --  DONE!
 
 x5. Fine tune oss to use fork() and exec() off one worker to "work" and wait() will done  --  DONE! 
 
-6. fine tune oss to keep forking off workers until the parameter specified --  Current
+x6. fine tune oss to keep forking off workers until the parameter specified --  DONE!
 
-7. fine tune simultaneous restriction (?)
+x7. fine tune simultaneous restriction  --  DONE!
 
 8. testing, correct readme with usage statement. include git history/version control log
 

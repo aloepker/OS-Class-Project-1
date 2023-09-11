@@ -50,22 +50,28 @@ while((option = getopt(argc, argv, "hn:s:t:")) != -1){
 printf("Number of workers Selected:%d\nNumber of Workers at a time:%d\nNumber of loops for each Worker:%d\n", numWorkers, workerLimit, iter);
 printf("Now we are cooking!\n");
 
-pid_t childPid = fork();
-if (childPid == 0) {
-
 char argString[20];
 sprintf(argString, "%d", iter);
-
-execl("./worker","./worker", argString, NULL);
-
-} else {
+int i,j;
 int stat;
-wait(&stat);
-printf("Wait opperation compleated successfully!\n");
+pid_t childPid;
+for(i=0;i<numWorkers;i++){
+if(i >= workerLimit) {wait(NULL);}// lets see if this one line of sweet magic does the trick!    !!! That's it! That's the melody to funky town! !!!
+	childPid = fork();
+if (childPid == -1){printf("Fork Process Failed!\n"); return EXIT_FAILURE;}
+	if (childPid == 0) {
+	execl("./worker","./worker", argString, NULL);
+	} // else
 }
+	if(childPid != 0) {
+	for (j=0;j<numWorkers;j++){
+	wait(&stat);
+	printf("Child Process compleated successfully!\n");
+	}
 
+	}// was from 1st if, now is for above if
 
-}
+}//ends main
 
 // this program will launch a certian number of worker processes with certian parameters.
 // the number launched is based on pased arguments
