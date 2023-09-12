@@ -1,43 +1,25 @@
-should consist of, at minamum:
+What to do:
 
-description of how to compile and run the project ,
+To compile, enter the directory, type "make" in the shell/terminal.
+Then run the program oss.
+The program oss must be run with options selected:
+-n <number>   :this sets the number of processes to launch, default is zero.
+-s <number>   :this sets how many processes can run at once, efault is zero.
+-t <number>   :this sets the number of loops each worker performs, default is zero.
+Example:
+./oss -n 3 -s 2 -t 3
 
-any outstanding problems that need to be addresed,
-
-probablems encountered allong the way, I guess a log of updates kinda..
-
-
-
-
-MUST USE VERSION CONTROL WITH GIT!!!
-
-The task:
-
-write a makefile that compiles 2 programs at once, oss and worker (use 'all' command)
-worker is launched from within oss variably as needed
+ 
+All previous issues have been addressed and corrected. This program is in it's final form.
 
 
+Issues encountered durring development:
+Had some trouble with execl initially.
+I also had some diffaculty implementing the loops that correctly controlled the number of workers and how many at a time.
+All in all, this project was a good refresher on the concepts.
 
-suggested steps:
+Program written by Adam Loepker
 
-x1. set up git repo  --  DONE!
 
-x2. create makefile and barebones source files to make sure it atleast complies  --  DONE!
 
-X3. create the code to parse options and recieve the comand parameters. review getopt  -- DONE!
 
-x4. fine tune worker taking in options and looping with output  --  DONE!
-
-x5. Fine tune oss to use fork() and exec() off one worker to "work" and wait() will done  --  DONE! 
-
-x6. fine tune oss to keep forking off workers until the parameter specified --  DONE!
-
-x7. fine tune simultaneous restriction  --  DONE!
-
-8. testing, correct readme with usage statement. include git history/version control log
-
-9. before submitting, perform: make clean and keep the latest source checked out in your directory
-
-10. change directory to loepker.1 and set permissions with : chmod 700 loepker.1
-   and: cp -p -r loepker.1 /home/hauschild/cs4760/assignment1
-resubmissions are ammended as loepker.2 and so on
